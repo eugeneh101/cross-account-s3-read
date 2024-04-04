@@ -1,0 +1,19 @@
+{
+    "app": "python3 app.py",
+    "context": {
+        "environment": {
+            "AWS_REGION": "us-east-1",
+            "S3_BUCKET_NAME": "cross-account-s3-read-folder",
+            "EVENTBRIDGE_ENABLED": true,
+            "VERSION_ENABLED": false,
+            "VENDORS":
+                [
+                    {
+                        "VENDOR_NAME": "vendor1",
+                        "VENDOR_FOLDER": "folder1",
+                        "VENDOR_IAM_ROLE": "arn:aws:iam::...:user/..."
+                    }
+                ]
+        }
+    }
+}
