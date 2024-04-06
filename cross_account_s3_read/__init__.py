@@ -31,8 +31,8 @@ class CrossAccountS3ReadStack(Stack):
                     actions=["s3:ListBucket"],
                     principals=[iam.ArnPrincipal(vendor_dict["VENDOR_IAM_ROLE"])],
                     conditions={
-                        "StringEquals": {
-                            "s3:prefix": ["", vendor_dict["VENDOR_FOLDER"] + "/"]
+                        "StringLike": {
+                            "s3:prefix": ["", vendor_dict["VENDOR_FOLDER"] + "/*"]
                         }
                     },
                     resources=[self.s3_bucket.bucket_arn],
